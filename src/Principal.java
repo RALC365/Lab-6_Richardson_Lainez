@@ -68,6 +68,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_seres_vivos = new javax.swing.JList<>();
+        Menu_pop = new javax.swing.JPopupMenu();
+        mp_modificar = new javax.swing.JMenuItem();
+        mp_eliminar = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -188,6 +191,11 @@ public class Principal extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setText("Modificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ModificarLayout = new javax.swing.GroupLayout(Modificar.getContentPane());
         Modificar.getContentPane().setLayout(ModificarLayout);
@@ -252,6 +260,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setText("Seres Vivos");
 
         jl_seres_vivos.setModel(new DefaultListModel());
+        jl_seres_vivos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_seres_vivosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jl_seres_vivos);
 
         javax.swing.GroupLayout Seres_VivosLayout = new javax.swing.GroupLayout(Seres_Vivos.getContentPane());
@@ -277,6 +290,23 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(96, Short.MAX_VALUE))
         );
+
+        mp_modificar.setText("Modificar");
+        mp_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mp_modificarActionPerformed(evt);
+            }
+        });
+        Menu_pop.add(mp_modificar);
+
+        mp_eliminar.setText("Eliminar");
+        mp_eliminar.setActionCommand("Eliminar");
+        mp_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mp_eliminarActionPerformed(evt);
+            }
+        });
+        Menu_pop.add(mp_eliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -419,7 +449,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void jm_seres_vivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_seres_vivosActionPerformed
         // TODO add your handling code here:
-       DefaultListModel modelo = (DefaultListModel) this.jl_seres_vivos.getModel();
+       //DefaultListModel modelo = (DefaultListModel) this.jl_seres_vivos.getModel();
+       DefaultListModel modelo = new DefaultListModel();
         for (Seres_Vivos s : main.getSeres_vivos()) {
             modelo.addElement(s);
         }
@@ -433,6 +464,49 @@ public class Principal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jm_seres_vivosActionPerformed
+
+    private void jl_seres_vivosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_seres_vivosMouseClicked
+        // TODO add your handling code here:
+        ser_seleccionado = this.jl_seres_vivos.getSelectedIndex();
+        if(evt.isMetaDown()){
+            
+            Menu_pop.show(evt.getComponent(), 
+                        evt.getX(), evt.getY()); 
+        }
+    }//GEN-LAST:event_jl_seres_vivosMouseClicked
+
+    private void mp_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mp_eliminarActionPerformed
+        // TODO add your handling code here:
+        DefaultListModel modelo = (DefaultListModel) this.jl_seres_vivos.getModel();
+        modelo.removeElementAt(ser_seleccionado);
+        this.main.getSeres_vivos().remove(ser_seleccionado);
+        JOptionPane.showMessageDialog(Seres_Vivos, "Has Destuido al ser vivo");
+    }//GEN-LAST:event_mp_eliminarActionPerformed
+
+    private void mp_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mp_modificarActionPerformed
+        // TODO add your handling code here:
+        this.tf_nombre_planeta1.setText(main.getSeres_vivos().get(ser_seleccionado).getNombre_planeta());
+        this.tf_nombre_raza1.setText(main.getSeres_vivos().get(ser_seleccionado).getNombre_raza());
+        this.sp_ki1.setValue(main.getSeres_vivos().get(ser_seleccionado).getKi());
+        this.sp_ki1.setValue(main.getSeres_vivos().get(ser_seleccionado).getMax_anios());
+        
+        this.Modificar.setModal(true);
+        Modificar.pack();
+        Modificar.setLocationRelativeTo(this);
+        Modificar.setVisible(true);
+    }//GEN-LAST:event_mp_modificarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        main.getSeres_vivos().get(ser_seleccionado).setNombre_planeta(this.tf_nombre_planeta1.getText());
+        main.getSeres_vivos().get(ser_seleccionado).setNombre_raza(this.tf_nombre_raza1.getText());
+        main.getSeres_vivos().get(ser_seleccionado).setKi(Integer.parseInt(this.sp_ki1.getValue()+""));
+        main.getSeres_vivos().get(ser_seleccionado).setMax_anios(Integer.parseInt(this.sp_max_anios1.getValue()+""));
+        JOptionPane.showMessageDialog(Modificar, "Se ha modificado con éxito");
+        jm_seres_vivosActionPerformed(evt);
+        Modificar.dispose();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -472,6 +546,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Crear_Seres_Vivos;
+    private javax.swing.JPopupMenu Menu_pop;
     private javax.swing.JDialog Modificar;
     private javax.swing.JDialog Seres_Vivos;
     private javax.swing.JButton jButton1;
@@ -500,6 +575,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jm_crear_seres_vivos;
     private javax.swing.JMenuItem jm_guardar_archivo;
     private javax.swing.JMenuItem jm_seres_vivos;
+    private javax.swing.JMenuItem mp_eliminar;
+    private javax.swing.JMenuItem mp_modificar;
     private javax.swing.JSpinner sp_ki;
     private javax.swing.JSpinner sp_ki1;
     private javax.swing.JSpinner sp_max_anios;
