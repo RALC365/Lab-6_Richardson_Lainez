@@ -1,10 +1,15 @@
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,7 +23,7 @@ import javax.swing.JOptionPane;
  */
 public class Principal extends javax.swing.JFrame {
     public String universo;
-    public Universo main;
+    public Universo main = new Universo();
     public int ser_seleccionado;
 
     /**
@@ -26,7 +31,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        this.universo = null;
+        this.universo = "";
         ser_seleccionado = 0;
         this.setExtendedState(MAXIMIZED_BOTH);
         this.getContentPane().setBackground(Color.BLACK);
@@ -411,19 +416,69 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jm_crear_seres_vivosActionPerformed
 
     private void jm_guardar_archivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_guardar_archivoActionPerformed
-        try {
+        JFileChooser jfc = new JFileChooser();
+        FileNameExtensionFilter filtro 
+                = new FileNameExtensionFilter("Archivos de Texto", "txt");
+        jfc.addChoosableFileFilter(filtro);
+        jfc.setSelectedFile(new File(main.getNombre()+".txt"));
+        int seleccion = jfc.showSaveDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            main.setArchivo(jfc.getSelectedFile());
+            try {
+                main.escribirArchivo();
+                JOptionPane.showMessageDialog(this, "Se ha guardado con éxito");
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "¡Ups! Ocurrió un error");
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*try {
             // TODO add your handling code here:
             this.main.escribirArchivo();
             JOptionPane.showMessageDialog(this, "El Universo se ha guardado con éxito");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this,"¡Ups! No se guardado el universo");
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }//GEN-LAST:event_jm_guardar_archivoActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        
+        File fichero = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        try {
+            JFileChooser jfc = new JFileChooser();
+            //filtros__texto(que se desea que aparzca en el conbox en el filtro y luego separador por copa, las extexnsiones)
+            FileNameExtensionFilter filtro
+                    = new FileNameExtensionFilter("Archivo de Textos", "txt");
+            jfc.setFileFilter(filtro);
+            int seleccion = jfc.showOpenDialog(this);
+            //evaluamos la selecion, si dentro del filechooser presiono ok
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                fichero = jfc.getSelectedFile();//aqui me devuelve todo el arcivo; aqui me hace una refernacia no juna instanciascion
+                main.setArchivo(fichero);
+                
+            }
+            
+            //setFileFiltre o addChooserbor (Uno lo deja establecidopor defecto y el otro lo agrega a laa cola de filtro que ya existe)
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            br.close();
+            fr.close();
+        } catch (Exception e) {
+        }
         
         
         
