@@ -58,6 +58,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tf_nombre_planeta = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         Modificar = new javax.swing.JDialog();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -69,10 +70,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         tf_nombre_planeta1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
         Seres_Vivos = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_seres_vivos = new javax.swing.JList<>();
+        jLabel13 = new javax.swing.JLabel();
         Menu_pop = new javax.swing.JPopupMenu();
         mp_modificar = new javax.swing.JMenuItem();
         mp_eliminar = new javax.swing.JMenuItem();
@@ -88,24 +91,40 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jm_guardar_archivo = new javax.swing.JMenuItem();
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Crear_Seres_Vivos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Seres Vivos");
+        Crear_Seres_Vivos.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre Raza");
+        Crear_Seres_Vivos.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
+        Crear_Seres_Vivos.getContentPane().add(tf_nombre_raza, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 117, 193, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("ki");
+        Crear_Seres_Vivos.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
 
         sp_ki.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 10));
+        Crear_Seres_Vivos.getContentPane().add(sp_ki, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 179, 59, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Número Máximo Años");
+        Crear_Seres_Vivos.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, -1, -1));
 
-        sp_max_anios.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        sp_max_anios.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 10));
+        Crear_Seres_Vivos.getContentPane().add(sp_max_anios, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 268, 59, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nombre Planeta");
+        Crear_Seres_Vivos.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
+        Crear_Seres_Vivos.getContentPane().add(tf_nombre_planeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 348, 164, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("Crear");
@@ -114,85 +133,50 @@ public class Principal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        Crear_Seres_Vivos.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 408, -1, -1));
 
-        javax.swing.GroupLayout Crear_Seres_VivosLayout = new javax.swing.GroupLayout(Crear_Seres_Vivos.getContentPane());
-        Crear_Seres_Vivos.getContentPane().setLayout(Crear_Seres_VivosLayout);
-        Crear_Seres_VivosLayout.setHorizontalGroup(
-            Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Crear_Seres_VivosLayout.createSequentialGroup()
-                .addGap(244, 244, 244)
-                .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Crear_Seres_VivosLayout.createSequentialGroup()
-                        .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Crear_Seres_VivosLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addGap(398, 398, 398))
-                            .addGroup(Crear_Seres_VivosLayout.createSequentialGroup()
-                                .addGap(145, 145, 145)
-                                .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sp_max_anios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sp_ki, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tf_nombre_planeta, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tf_nombre_raza, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(Crear_Seres_VivosLayout.createSequentialGroup()
-                        .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(Crear_Seres_VivosLayout.createSequentialGroup()
-                .addGap(419, 419, 419)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        Crear_Seres_VivosLayout.setVerticalGroup(
-            Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Crear_Seres_VivosLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel3)
-                .addGap(42, 42, 42)
-                .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(tf_nombre_raza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(sp_ki, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
-                .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(sp_max_anios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addGroup(Crear_Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(tf_nombre_planeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(80, 80, 80))
-        );
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f4.jpg"))); // NOI18N
+        Crear_Seres_Vivos.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 520));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Modificar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Seres Vivos");
+        Modificar.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 200, 40));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre Raza");
+        Modificar.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 220, 40));
+        Modificar.getContentPane().add(tf_nombre_raza1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 220, 30));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Ki");
+        Modificar.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 120, 40));
 
         sp_ki1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 10));
+        Modificar.getContentPane().add(sp_ki1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 70, -1));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Número Máximo Años");
+        Modificar.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 290, 40));
 
-        sp_max_anios1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        sp_max_anios1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 10));
+        Modificar.getContentPane().add(sp_max_anios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 70, -1));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nombre Planeta");
+        Modificar.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 240, 40));
+        Modificar.getContentPane().add(tf_nombre_planeta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 164, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setText("Modificar");
@@ -201,68 +185,17 @@ public class Principal extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        Modificar.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 408, -1, -1));
 
-        javax.swing.GroupLayout ModificarLayout = new javax.swing.GroupLayout(Modificar.getContentPane());
-        Modificar.getContentPane().setLayout(ModificarLayout);
-        ModificarLayout.setHorizontalGroup(
-            ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ModificarLayout.createSequentialGroup()
-                .addGap(244, 244, 244)
-                .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ModificarLayout.createSequentialGroup()
-                        .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9))
-                        .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ModificarLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                                .addComponent(jLabel8)
-                                .addGap(398, 398, 398))
-                            .addGroup(ModificarLayout.createSequentialGroup()
-                                .addGap(145, 145, 145)
-                                .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sp_max_anios1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sp_ki1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tf_nombre_planeta1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tf_nombre_raza1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(ModificarLayout.createSequentialGroup()
-                        .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel11))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(ModificarLayout.createSequentialGroup()
-                .addGap(419, 419, 419)
-                .addComponent(jButton2)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        ModificarLayout.setVerticalGroup(
-            ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ModificarLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel8)
-                .addGap(42, 42, 42)
-                .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(tf_nombre_raza1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(sp_ki1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
-                .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(sp_max_anios1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addGroup(ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(tf_nombre_planeta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(80, 80, 80))
-        );
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f1.jpg"))); // NOI18N
+        Modificar.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 520));
 
+        Seres_Vivos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Seres Vivos");
+        Seres_Vivos.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
 
         jl_seres_vivos.setModel(new DefaultListModel());
         jl_seres_vivos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -272,29 +205,10 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jl_seres_vivos);
 
-        javax.swing.GroupLayout Seres_VivosLayout = new javax.swing.GroupLayout(Seres_Vivos.getContentPane());
-        Seres_Vivos.getContentPane().setLayout(Seres_VivosLayout);
-        Seres_VivosLayout.setHorizontalGroup(
-            Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Seres_VivosLayout.createSequentialGroup()
-                .addGroup(Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Seres_VivosLayout.createSequentialGroup()
-                        .addGap(335, 335, 335)
-                        .addComponent(jLabel2))
-                    .addGroup(Seres_VivosLayout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
-        Seres_VivosLayout.setVerticalGroup(
-            Seres_VivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Seres_VivosLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel2)
-                .addGap(66, 66, 66)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
+        Seres_Vivos.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 667, 304));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f3.jpg"))); // NOI18N
+        Seres_Vivos.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 520));
 
         mp_modificar.setText("Modificar");
         mp_modificar.addActionListener(new java.awt.event.ActionListener() {
@@ -420,7 +334,14 @@ public class Principal extends javax.swing.JFrame {
         FileNameExtensionFilter filtro 
                 = new FileNameExtensionFilter("Archivos de Texto", "txt");
         jfc.addChoosableFileFilter(filtro);
-        jfc.setSelectedFile(new File(main.getNombre()+".txt"));
+        int x = main.getNombre().length();
+       
+        if ((main.getNombre()).substring(x-5,x-1).equals(".txt")) {
+            jfc.setSelectedFile(new File(main.getNombre()+".txt"));
+        }else{
+            jfc.setSelectedFile(new File(main.getNombre()));
+        }
+        
         int seleccion = jfc.showSaveDialog(this);
         if (seleccion == JFileChooser.APPROVE_OPTION) {
             main.setArchivo(jfc.getSelectedFile());
@@ -432,15 +353,7 @@ public class Principal extends javax.swing.JFrame {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    
         /*try {
             // TODO add your handling code here:
             this.main.escribirArchivo();
@@ -535,7 +448,7 @@ public class Principal extends javax.swing.JFrame {
         DefaultListModel modelo = (DefaultListModel) this.jl_seres_vivos.getModel();
         modelo.removeElementAt(ser_seleccionado);
         this.main.getSeres_vivos().remove(ser_seleccionado);
-        JOptionPane.showMessageDialog(Seres_Vivos, "Has Destuido al ser vivo");
+        JOptionPane.showMessageDialog(Seres_Vivos, "¡MONSTRUO! Has Asesinado a un ser vivo");
     }//GEN-LAST:event_mp_eliminarActionPerformed
 
     private void mp_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mp_modificarActionPerformed
@@ -610,6 +523,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
